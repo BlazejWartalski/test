@@ -1,0 +1,19 @@
+title: 'Footer text'
+data:
+  text_field: '© StarForm 2022  |  All rights reserved.'
+  bard_field:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: 'Website design by '
+        -
+          type: text
+          marks:
+            -
+              type: bold
+          text: Framework
+        -
+          type: text
+          text: .

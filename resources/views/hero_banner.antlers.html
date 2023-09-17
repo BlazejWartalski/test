@@ -1,0 +1,43 @@
+
+
+<!-- START resources/views/hero_banner.antlers.html -->
+
+<div class="relative">
+  {{ partial:navigation }}
+    <img class='
+    w-full
+    h-[585px]
+    md:h-auto
+    object-cover
+    object-center
+    ' 
+    src="{{ hero_banner_image }}" alt="Hero Image">
+    <div class="
+    absolute 
+    top-[40%] 
+    flex flex-col items-center
+    px-14
+    w-full
+    text-center
+    ">
+      <h1>
+        {{ heading }}
+      </h1>
+      <div class="
+      lg:w-2/5 
+      text-center">
+        {{ bard_field }}
+      </div>
+    </div>
+    <div class="
+    absolute 
+    lg:bottom-[12%] 
+    w-full 
+    flex justify-center">
+      <a class="" href="#">
+        <img src="{{ hero_icon:assets_field }}">
+      </a>
+    </div>
+</div>
+
+<!-- END resources/views/hero_banner.antlers.html -->

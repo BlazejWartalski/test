@@ -1,0 +1,19 @@
+<div class="flexible-container">
+    <div style="background-image: url('{{ background_image }}');" 
+    class="
+    min-h-[300px]
+    w-full
+    flex flex-col items-center 
+    rounded-3xl 
+    p-4">
+        <div class="text-center mb-4 text-white">
+            {{ text_field }}
+        </div>
+        <div class="social-icons mb-4">
+            {{ partial:unique_components/social_icons }}
+        </div>
+        <div class="bard-area text-center text-white">
+            {{ bard_field }}
+        </div>
+    </div>
+</div>

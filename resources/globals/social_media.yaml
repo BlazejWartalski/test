@@ -1,0 +1,53 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: replicator_field
+        field:
+          collapse: false
+          previews: true
+          sets:
+            social_media:
+              display: 'Social Media'
+              fields:
+                -
+                  handle: url
+                  field:
+                    display: url
+                    type: link
+                    icon: link
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    always_save: false
+                -
+                  handle: which_social_media
+                  field:
+                    options:
+                      facebook: Facebook
+                      twitter: Twitter
+                      deviantart: 'Deviant Art'
+                      instagram: Instagram
+                      artstation: 'Art Station'
+                      discord: Discord
+                    multiple: false
+                    clearable: false
+                    searchable: true
+                    taggable: false
+                    push_tags: false
+                    cast_booleans: false
+                    display: 'Which social media is it?'
+                    type: select
+                    icon: select
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    always_save: false
+          display: 'Replicator Field'
+          type: replicator
+          icon: replicator
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false

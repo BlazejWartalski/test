@@ -1,0 +1,38 @@
+@import "fonts/text.css";
+
+
+
+
+
+
+:root {
+    --tw-padding-8: 2rem; /* Replace with the value in your Tailwind config for 'padding.8' */
+  }
+/* This is all you. */
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #132237;
+}
+
+.fluid-container {
+    @apply w-full max-w-[1440px] mx-auto;
+};
+
+.fluid-container {
+    padding-left: calc(env(safe-area-inset-left, 0rem) + var(--tw-padding-8));
+    padding-right: calc(env(safe-area-inset-right, 0rem) + var(--tw-padding-8));
+}
+  
+/*Navigation */
+.parent-hover {
+    color: #E8B222;
+    text-decoration: underline;
+}
+
+.parent-hover .svg-icon {
+    transform: rotate(180deg);
+    stroke: #E8B222;
+}

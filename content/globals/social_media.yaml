@@ -1,0 +1,10 @@
+title: 'Social Media'
+data:
+  replicator_field:
+    -
+      id: lmnx48zq
+      assets_field:
+        - twitter.svg
+      url: '#'
+      type: twitter
+      enabled: true

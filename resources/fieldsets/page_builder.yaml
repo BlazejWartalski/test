@@ -1,0 +1,55 @@
+title: 'Page Builder'
+fields:
+  -
+    handle: page_components
+    field:
+      display: 'Page components'
+      type: section
+      icon: section
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    handle: page_builder
+    field:
+      collapse: false
+      previews: true
+      sets:
+        heading:
+          display: Heading
+          fields:
+            -
+              import: heading
+        two_column_container:
+          display: 'Two column container'
+          fields:
+            -
+              import: two_column_container
+        text_box:
+          display: 'Text box'
+          fields:
+            -
+              import: text_box
+        main_mav:
+          display: 'Main mav'
+          fields:
+            -
+              import: main_nav
+        call_to_action:
+          display: 'Call To Action'
+          fields:
+            -
+              import: call_to_action
+        small_gallery:
+          display: 'Small gallery'
+          fields:
+            -
+              import: homepage_small_gallery
+      display: 'Page builder'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false

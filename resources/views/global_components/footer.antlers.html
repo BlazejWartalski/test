@@ -1,0 +1,73 @@
+<!-- START resources/views/global_components/footer.antlers.html -->
+<div class="w-full bg-[#0C1623] py-8 leading-[3rem]">
+    <div class="fluid-container flex flex-col">
+        <div class="flex flex-row gap-20 justify-between align-center">
+            <div>
+                <img src=" {{ logo:footer_logo }}">
+            </div>
+            <div>
+                <p class="tag text-[1.6rem] ">
+                    Contact Us
+                </p>
+                
+                <h4 class="border-b-[1px] leading-relaxed mt-3">
+                    {{ contact_information:email }}
+                </h4>
+                <h4 class="border-b-[1px] leading-relaxed mt-6">
+                    {{ contact_information:telephone }}
+                </h4>
+            </div>
+            <div>
+                <p class="tag text-[1.4rem] ">
+                    Navigation
+                </p>
+                <div style="display: flex;">
+                    <!-- First column -->
+                    <div>
+                        {{ nav:footer_navigation }}
+                            {{ if index < 5 }}
+                                <div class="text-[1.4rem] disabled mt-3">{{ title }}</div>
+                            {{ /if }}
+                        {{ /nav:footer_navigation }}
+                    </div>
+            
+                    <!-- Second column -->
+                    <div class="ml-12">
+                        {{ nav:footer_navigation }}
+                            {{ if index >= 5 }}
+                                <div class="text-[1.4rem] disabled mt-3">{{ title }}</div>
+                            {{ /if }}
+                        {{ /nav:footer_navigation }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="tag text-[1.4rem]">
+                    Legal
+                </p>
+                {{ nav:footer_legal_nav }}
+                    <div class="text-[1.4rem] disabled mt-3">{{ title }}</div>
+                {{ /nav:footer_legal_nav }}
+            </div>
+            <div>
+                {{ social_media }}
+                    {{ replicator_field }}
+                        <a>
+                            <img src="{{ assets_field }}">
+                        </a>
+                    {{ /replicator_field }}
+                {{ /social_media }}
+            </div>
+        </div>
+        <div class="
+        flex flex-row 
+        justify-between 
+        align-center 
+        mt-20
+        ">
+            <p class="w-full text-start">{{ footer_text:text_field }}</p>
+            <div class="w-full text-end">{{ footer_text:bard_field }}</div>
+        </div>
+    </div>
+</div>
+<!-- END resources/views/global_components/footer.antlers.html -->

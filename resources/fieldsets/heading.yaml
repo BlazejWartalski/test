@@ -1,0 +1,35 @@
+title: Heading
+fields:
+  -
+    handle: text_field
+    field:
+      input_type: text
+      antlers: false
+      display: 'Text Field'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    handle: text_size
+    field:
+      options:
+        h2: Biggest
+        h3: Big
+        h4: Medium
+        h5: Small
+      multiple: false
+      clearable: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      display: 'text size'
+      type: select
+      icon: select
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
