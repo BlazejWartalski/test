@@ -2,16 +2,15 @@
 
 <!-- START resources/views/hero_banner.antlers.html -->
 
-<div class="relative">
-  {{ partial:navigation }}
-    <img class='
+<div class="relative
     w-full
-    h-[585px]
-    md:h-auto
-    object-cover
-    object-center
-    ' 
-    src="{{ hero_banner_image }}" alt="Hero Image">
+    h-[1030px]
+    bg-no-repeat
+    bg-center
+" 
+style="background-image:url('{{ glide:hero_banner_image }}'); background-size: 100% 100%">
+  {{ partial:navigation }}
+
     <div class="
     absolute 
     top-[40%] 
@@ -24,7 +23,8 @@
         {{ heading }}
       </h1>
       <div class="
-      lg:w-2/5 
+      lg:w-[550px]
+      
       text-center">
         {{ bard_field }}
       </div>

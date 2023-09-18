@@ -5,7 +5,7 @@ title: Home
 template: home
 hero_banner_image: herobanner-1.webp
 updated_by: e33c4ae1-e38a-4bd2-9ecd-3bd884fd9f36
-updated_at: 1694977104
+updated_at: 1695069761
 heading: 'Welcome to StarForm'
 bard_field:
   -
@@ -22,6 +22,15 @@ bard_field:
             attrs:
               color: '#E8B222'
         text: 'Lower emissions with Star-Based Solar Technology'
+page_builder:
+  -
+    id: lmpcpuah
+    tag: 'OUR mission'
+    textarea_field: 'Climate change and the pressures on global energy resources are urgent problems. The UK has set out an ambitious national clean energy policy to fully decarbonise the economy by 2050.'
+    button_text: 'Business Plan'
+    button_link: '#'
+    type: two_column_container_unequal
+    enabled: true
 ---
 ## Welcome to your new brand Statamic site!
 

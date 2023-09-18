@@ -1,0 +1,28 @@
+{{ dump:tag }}
+{{ dump:textarea_field }}
+{{ dump:button_text }}
+{{ dump:button_link }}
+
+<!-- START views/page_builder/two_column_container_unequal.antlers.html -->
+<section class="
+flex 
+fluid-container
+min-h-[430px]
+">
+    <div class="w-1/3">
+        <p class="golden-tag">{{ tag }}</p>
+    </div>
+    <div class="
+    w-2/3 
+    flex flex-col justify-between
+    ">
+        <h3 class="lg:w-[85%]">
+            {{ textarea_field }}
+        </h3>
+        <a class="btn" href="{{ button_link}}">            
+            {{ button_text }}
+        </a>
+
+    </div>
+</section>
+<!-- END views/page_builder/two_column_container_unequal.antlers.html -->

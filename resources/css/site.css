@@ -18,7 +18,7 @@ body {
 }
 
 .fluid-container {
-    @apply w-full max-w-[1440px] mx-auto;
+    @apply w-full max-w-[1600px] mx-auto;
 };
 
 .fluid-container {
@@ -35,4 +35,42 @@ body {
 .parent-hover .svg-icon {
     transform: rotate(180deg);
     stroke: #E8B222;
+}
+
+.btn {
+    @apply bg-[#3C76B6]
+    relative
+    flex justify-center items-center
+    text-[1.6rem]
+    font-medium
+    h-[60px]
+    w-[190px]
+    mb-8
+    hover:bg-[#2E5C8E];
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid #132237;
+    width: 0;
+    height: 0;
+    pointer-events: none; /* Prevents the triangle from being clickable */
+  }
+
+.golden-tag {
+    @apply text-[#E8B222]
+    uppercase
+    text-[1.6rem]
+    tracking-[0.4rem]
+    ;
+    text-shadow:
+    1px 1px 1px #000,
+    -1px 1px 1px #000,
+    -1px -1px 1px #000,
+    1px -1px 1px #000,
+    0px 4px 5px #000;
 }

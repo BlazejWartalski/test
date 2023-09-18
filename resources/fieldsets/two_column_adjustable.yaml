@@ -1,0 +1,47 @@
+title: 'Block - Two Column (1/3rd 2/3rd)'
+fields:
+  -
+    handle: left_column
+    field:
+      display: 'Left column'
+      type: section
+      icon: section
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    handle: tag
+    field:
+      input_type: text
+      antlers: false
+      display: Tag
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    handle: right_column
+    field:
+      display: 'Right Column'
+      type: section
+      icon: section
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    handle: textarea_field
+    field:
+      antlers: false
+      display: 'Textarea Field'
+      type: textarea
+      icon: textarea
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    import: button

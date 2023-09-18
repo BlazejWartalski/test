@@ -46,6 +46,11 @@ fields:
           fields:
             -
               import: homepage_small_gallery
+        two_column_container_unequal:
+          display: 'Two Column Container unequal'
+          fields:
+            -
+              import: two_column_adjustable
       display: 'Page builder'
       type: replicator
       icon: replicator
