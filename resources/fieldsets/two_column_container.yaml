@@ -6,9 +6,26 @@ fields:
       collapse: false
       previews: true
       sets:
-        new_set:
-          display: 'New Set'
-          fields: {  }
+        button:
+          display: button
+          fields:
+            -
+              import: button
+        tag:
+          display: tag
+          fields:
+            -
+              import: tag_heading
+        text:
+          display: Text
+          fields:
+            -
+              import: text_box
+        image:
+          display: image
+          fields:
+            -
+              import: image
       display: 'Left column'
       type: replicator
       icon: replicator
@@ -22,9 +39,26 @@ fields:
       collapse: false
       previews: true
       sets:
-        new_set:
-          display: 'New Set'
-          fields: {  }
+        button:
+          display: button
+          fields:
+            -
+              import: button
+        tag:
+          display: tag
+          fields:
+            -
+              import: tag_heading
+        image:
+          display: image
+          fields:
+            -
+              import: image
+        text:
+          display: text
+          fields:
+            -
+              import: text_box
       display: 'Right column'
       type: replicator
       icon: replicator
@@ -33,95 +67,12 @@ fields:
       visibility: visible
       always_save: false
   -
-    handle: bard_left_column
+    handle: add_flourish
     field:
-      collapse: false
-      always_show_set_button: false
-      previews: true
-      buttons:
-        - h2
-        - h3
-        - bold
-        - italic
-        - unorderedlist
-        - orderedlist
-        - removeformat
-        - quote
-        - anchor
-        - image
-        - table
-      save_html: false
-      toolbar_mode: fixed
-      link_noopener: false
-      link_noreferrer: false
-      target_blank: false
-      reading_time: false
-      fullscreen: true
-      allow_source: true
-      enable_input_rules: true
-      enable_paste_rules: true
-      antlers: false
-      remove_empty_nodes: false
-      display: 'Bard left column'
-      type: bard
-      icon: bard
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      always_save: false
-  -
-    handle: bard_right_column
-    field:
-      collapse: false
-      always_show_set_button: false
-      previews: true
-      buttons:
-        - h2
-        - h3
-        - bold
-        - italic
-        - unorderedlist
-        - orderedlist
-        - removeformat
-        - quote
-        - anchor
-        - image
-        - table
-      save_html: false
-      toolbar_mode: fixed
-      link_noopener: false
-      link_noreferrer: false
-      target_blank: false
-      reading_time: false
-      fullscreen: true
-      allow_source: true
-      enable_input_rules: true
-      enable_paste_rules: true
-      antlers: false
-      remove_empty_nodes: false
-      display: 'Bard Right Column'
-      type: bard
-      icon: bard
-      listable: hidden
-      instructions_position: above
-      visibility: visible
-      always_save: false
-  -
-    handle: column_gap
-    field:
-      options:
-        4: Small
-        8: Medium
-        12: Large
-      multiple: false
-      clearable: false
-      searchable: true
-      taggable: false
-      push_tags: false
-      cast_booleans: false
-      display: 'Column Gap'
-      type: select
-      icon: select
+      default: false
+      display: 'Add flourish'
+      type: toggle
+      icon: toggle
       listable: hidden
       instructions_position: above
       visibility: visible

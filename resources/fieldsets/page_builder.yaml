@@ -51,6 +51,11 @@ fields:
           fields:
             -
               import: two_column_adjustable
+        slider:
+          display: Slider
+          fields:
+            -
+              import: slider
       display: 'Page builder'
       type: replicator
       icon: replicator

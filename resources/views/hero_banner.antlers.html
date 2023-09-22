@@ -34,7 +34,8 @@ style="background-image:url('{{ glide:hero_banner_image }}'); background-size: 1
     lg:bottom-[12%] 
     w-full 
     flex justify-center">
-      <a class="" href="#">
+
+      <a class="" onClick="document.getElementById('firstItem').scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });">
         <img src="{{ hero_icon:assets_field }}">
       </a>
     </div>

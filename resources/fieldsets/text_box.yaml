@@ -18,6 +18,9 @@ fields:
         - anchor
         - image
         - table
+        - h4
+        - h5
+        - h6
       save_html: false
       toolbar_mode: fixed
       link_noopener: false

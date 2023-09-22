@@ -1,0 +1,20 @@
+title: 'Block - Slider'
+fields:
+  -
+    handle: replicator_field
+    field:
+      collapse: false
+      previews: true
+      sets:
+        card:
+          display: Card
+          fields:
+            -
+              import: element_-_card
+      display: 'Replicator Field'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
