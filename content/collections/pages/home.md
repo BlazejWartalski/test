@@ -5,7 +5,7 @@ title: Home
 template: home
 hero_banner_image: herobanner-1.webp
 updated_by: e33c4ae1-e38a-4bd2-9ecd-3bd884fd9f36
-updated_at: 1695417721
+updated_at: 1695419162
 heading: 'Welcome to StarForm'
 bard_field:
   -
@@ -95,6 +95,26 @@ page_builder:
         type: card
         enabled: true
     type: slider
+    enabled: true
+  -
+    id: lmv4q26e
+    replicator_field:
+      -
+        id: lmv4q2u6
+        assets_field: apple_logo_black.svg
+        type: img
+        enabled: true
+      -
+        id: lmv4q87a
+        assets_field: tesla_motors.svg
+        type: img
+        enabled: true
+      -
+        id: lmv4q8ta
+        assets_field: samsung_logo.svg
+        type: img
+        enabled: true
+    type: automatic_slider
     enabled: true
 ---
 ## Welcome to your new brand Statamic site!

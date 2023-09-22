@@ -1,0 +1,59 @@
+<div class="infinite-image-container overflow-hidden">
+    <div class="image-row flex animate-marquee">
+        {{ replicator_field }}
+        <div class="image-item flex-shrink-0 mr-4"> <!-- Adjust spacing between images with 'mr' -->
+            <img src="{{ glide:assets_field }}" alt="Logo">
+        </div>
+        {{ /replicator_field }}
+    </div>
+</div>
+
+
+
+<script>
+    var container = document.querySelector('.image-row');
+    var imageItems = container.querySelectorAll('.image-item');
+    var availableWidth = container.clientWidth;
+    var occupiedWidth = 0;
+    var images = [];
+
+    while (availableWidth > 0) {
+        for (var i = 0; i < imageItems.length; i++) {
+            var imageItem = imageItems[i];
+            var imageWidth = imageItem.clientWidth;
+            
+            // Clone the image item and append it to the container
+            var clone = imageItem.cloneNode(true);
+            container.appendChild(clone);
+            
+            // Update occupied and available width
+            occupiedWidth += imageWidth;
+            availableWidth -= imageWidth;
+            
+            // If available width is zero or negative, break out of the loop
+            if (availableWidth <= 0) {
+                break;
+            }
+        }
+    }
+</script>
+
+
+
+
+<style>
+    /* Define the animation */
+    @keyframes marquee {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    /* Apply the animation */
+    .animate-marquee {
+        animation: marquee 10s linear infinite; /* Adjust the animation duration as needed */
+    }
+</style>

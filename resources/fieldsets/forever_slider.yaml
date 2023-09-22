@@ -1,0 +1,20 @@
+title: 'Block - Forever slider'
+fields:
+  -
+    handle: replicator_field
+    field:
+      collapse: false
+      previews: true
+      sets:
+        img:
+          display: img
+          fields:
+            -
+              import: image
+      display: 'Replicator Field'
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
