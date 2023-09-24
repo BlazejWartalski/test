@@ -1,0 +1,13 @@
+title: 'Element - Text Content'
+fields:
+  -
+    handle: textarea_field
+    field:
+      antlers: false
+      display: 'Textarea Field'
+      type: textarea
+      icon: textarea
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false

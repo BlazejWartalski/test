@@ -1,6 +1,18 @@
 title: 'Block - Forever slider'
 fields:
   -
+    handle: tag
+    field:
+      input_type: text
+      antlers: false
+      display: 'Heading Tag'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
     handle: replicator_field
     field:
       collapse: false

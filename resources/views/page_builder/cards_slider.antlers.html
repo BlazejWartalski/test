@@ -1,0 +1,104 @@
+<!-- START page_builder/cards_slider.antlers.html -->
+<div class="slider-container3 relative min-h-[900px] fluid-container overflow-hidden">
+    <h2 class="tracking-tight">
+        {{ heading }}
+    </h2>
+    <div class="swiper-container3 slider3 whitespace-nowrap">
+        <div class="swiper-wrapper">
+            {{ collection from="blog" }}
+                <div class="swiper-slide 
+                            slider-card 
+                            max-w-[445px] 
+                            max-h-[585px]
+                            min-h-[585px]
+                            bg-zinc-400 
+                            w-64
+                            flex-col
+                            justify-between
+                            p-8
+                            "
+                style="background-image:url('{{ glide:assets_field }}'); background-size: 100% 100%">
+                    <div class="flex h-full">
+                        <p class="px-8 py-3
+                                rounded-full
+                                text-[1.2rem]
+                                font-bold
+                                uppercase
+                                tracking-[0.3em]
+                        " style="background-color: {{ taxonomy_terms_field:color_field }};">
+                            {{ taxonomy_terms_field:title }}
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col flex-wrap 
+                                whitespace-normal
+                                ">
+                        <p class="text-[1.4rem] tracking-[0.3em]">
+                            {{ date_field format="d/m/Y" }}
+                        </p>
+                        <p class="text-[2.4rem] mb-8">
+                            {{ title }}
+                        </p>
+                        <p class="text-[1.6rem] leading-relaxed opacity-60 mb-24">
+                            {{ short_description }}
+                        </p>
+                        <a href="#" class="flex flex-row items-center gap-2">
+                            <p class="text-[1.4rem] tracking-[0.3em]">
+                                READ MORE
+                            </p>
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 5L1 5M11 5L6.625 9M11 5L6.625 1" stroke="#E8B222" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            {{ /collection }}
+        </div>
+    </div>
+    <div class="slider-buttons">
+        <button class="slider-button prev px-4 py-2 rounded-full bg-blue-500 text-white mr-4 rotate-180" id="prev">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+            </svg>
+        </button>
+        <button class="slider-button next px-4 py-2 rounded-full bg-blue-500 text-white" id="next">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script>
+    function updateSlidesPerView() {
+        const containerWidth = document.querySelector('.swiper-container3').offsetWidth;
+        let slidesPerView = 3; // Default value for large screens
+        
+        if (containerWidth < 768) {
+            slidesPerView = 1; // Show one card on smaller screens
+        } else if (containerWidth < 1024) {
+            slidesPerView = 2; // Show two cards on medium screens
+        }
+        
+        return slidesPerView;
+    }
+
+    const mySwiper3 = new Swiper('.swiper-container3', {
+        slidesPerView: updateSlidesPerView(), // Initial slidesPerView
+        spaceBetween: 20,  // Space between slides
+        navigation: {
+            prevEl: '#prev',
+            nextEl: '#next',
+        },
+        // Additional Swiper.js options can be added here
+    });
+
+    // Update slidesPerView on window resize
+    window.addEventListener('resize', () => {
+        mySwiper3.params.slidesPerView = updateSlidesPerView();
+        mySwiper3.update();
+    });
+</script>
+
+
+<!-- FINISH page_builder/cards_slider.antlers.html -->

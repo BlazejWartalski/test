@@ -1,32 +1,22 @@
-<div class="fluid-container flex">
-    <div class="left-side w-full">        
+<!-- START resources/views/page_builder/two_column_container -->
+<div class="fluid-container 
+            flex
+            gap-32
+            overflow-x-clip
+">
+    <div class="left-side 
+                w-full 
+                flex flex-col justify-center gap-6
+    ">        
         {{ left_column }}
             {{ partial src='two_column/{type}' }}
         {{ /left_column }}
     </div>
     <div class="right-side w-full relative">
-        {{ if add_flourish }}
-                <div class="absolute left-full">
-                    <div class="relative
-                    flex justify-center
-                    items-center
-                    ">
-                        <svg class="absolute" width="100" height="100" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" stroke="#E8B222" stroke-width="10" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
-                        </svg>
-                        
-                        <svg class="absolute" width="150" height="150" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" stroke="#E8B222" stroke-width="4" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
-                        </svg>
-                            
-                        <svg class="absolute" width="200" height="200" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" stroke="#E8B222" stroke-width="2" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
-                        </svg>
-                    </div>
-                </div>
-        {{ /if }}
         {{ right_column }}
             {{ partial src='two_column/{type}' }}
         {{ /right_column }}
     </div>
 </div>
+
+<!-- FINISH resources/views/page_builder/two_column_container -->

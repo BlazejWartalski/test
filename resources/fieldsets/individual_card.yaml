@@ -1,0 +1,6 @@
+title: 'Block - Individual Card'
+fields:
+  -
+    import: image
+  -
+    import: element_-_card

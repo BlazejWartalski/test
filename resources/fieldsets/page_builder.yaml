@@ -61,6 +61,16 @@ fields:
           fields:
             -
               import: forever_slider
+        single_card:
+          display: 'Single Card'
+          fields:
+            -
+              import: individual_card
+        cards_slider:
+          display: 'Cards Slider'
+          fields:
+            -
+              import: cards_slider
       display: 'Page builder'
       type: replicator
       icon: replicator

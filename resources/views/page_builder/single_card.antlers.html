@@ -1,0 +1,27 @@
+<!-- START views/page_builder/card.antlers.html -->
+
+<div class="w-full h-[620px]
+            flex flex-col
+            justify-center
+            items-center
+            gap-6
+            text-center
+" 
+        style="background-image:url('{{ glide:assets_field }}'); background-size: 100% 100%"
+>
+    {{ if tag_field }}
+        <div class="golden-tag">{{ tag_field }}</div>
+    {{ /if }}
+
+    {{ if heading }} 
+        <h2 class="max-w-[910px]">{{ heading }}</h2>
+    {{ /if }} 
+
+    {{ if text_field }}
+        <p>{{ text_field }}</p>
+    {{ /if }}
+
+    <a href="{{ button_link }}" class="btn mt-20">{{ button_text }}</a>
+</div>
+
+<!-- FINISH views/page_builder/card.antlers.html -->

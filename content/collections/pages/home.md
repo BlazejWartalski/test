@@ -5,7 +5,7 @@ title: Home
 template: home
 hero_banner_image: herobanner-1.webp
 updated_by: e33c4ae1-e38a-4bd2-9ecd-3bd884fd9f36
-updated_at: 1695419162
+updated_at: 1695567006
 heading: 'Welcome to StarForm'
 bard_field:
   -
@@ -40,23 +40,14 @@ page_builder:
         type: tag
         enabled: true
       -
-        id: lms7tr6b
-        bard_field:
-          -
-            type: heading
-            attrs:
-              level: 2
-            content:
-              -
-                type: text
-                text: 'Climate change and the pressures on global energy resources are urgent problems.'
-          -
-            type: paragraph
-            content:
-              -
-                type: text
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna vitae elementum interdum scelerisque quisque donec nulla. Velit diam quam nullam elit hac sit. Nunc, lacus, facilisis mattis amet mauris volutpat dui tellus nam. Neque, rhoncus placerat vitae arcu habitant. Dignissim quam ipsum dolor egestas non orci. At enim ut elementum.'
-        type: text
+        id: lmxks3z5
+        text_field: 'Climate change and the pressures on global energy resources are urgent problems.'
+        type: heading
+        enabled: true
+      -
+        id: lmxks6mg
+        textarea_field: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna vitae elementum interdum scelerisque quisque donec nulla. Velit diam quam nullam elit hac sit. Nunc, lacus, facilisis mattis amet mauris volutpat dui tellus nam. Neque, rhoncus placerat vitae arcu habitant. Dignissim quam ipsum dolor egestas non orci. At enim ut elementum.'
+        type: text_content
         enabled: true
       -
         id: lms7tszv
@@ -96,6 +87,7 @@ page_builder:
         enabled: true
     type: slider
     enabled: true
+    assets_field: group-538(1)-1.jpg
   -
     id: lmv4q26e
     replicator_field:
@@ -115,6 +107,22 @@ page_builder:
         type: img
         enabled: true
     type: automatic_slider
+    enabled: true
+    tag: MEMBERSHIPS
+  -
+    id: lmw0mnin
+    enable_the_flourish_effect: true
+    type: cards_slider
+    enabled: true
+    heading: Media
+  -
+    id: lmvxwasf
+    assets_field: group-868.jpg
+    tag_field: 'GET IN TOUCH'
+    heading: 'Help us get one step closer to Net Zero Star-Based Solar Power.'
+    button_text: 'Contact us'
+    button_link: 'entry::82d3d2cf-42fe-491b-868c-38d754780b0b'
+    type: single_card
     enabled: true
 ---
 ## Welcome to your new brand Statamic site!

@@ -1,4 +1,4 @@
-title: 'Two column container'
+title: 'Block - Two column container'
 fields:
   -
     handle: left_column
@@ -26,6 +26,16 @@ fields:
           fields:
             -
               import: image
+        heading:
+          display: Heading
+          fields:
+            -
+              import: element_heading
+        text_content:
+          display: 'Text content'
+          fields:
+            -
+              import: element_text_content
       display: 'Left column'
       type: replicator
       icon: replicator

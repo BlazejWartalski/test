@@ -1,39 +1,109 @@
-<div class="swiper-container relative">
+<!-- START resources/views/page_builder/slider.antlers.html -->
+
+<div class="swiper-container 
+            relative 
+            overflow-hidden 
+            py-80"
+    style="
+        background-image:url('{{ glide:assets_field }}');
+        background-size: 100% 100%
+">
     <div class="swiper-wrapper">
         {{ replicator_field }}
         <div class="swiper-slide">
-            <div class="card">
-                <div class="tag">{{ tag_field }}</div>
-                <h2>{{ heading }}</h2>
-                <p>{{ text_field }}</p>
-                <a href="{{ button_link }}" class="button">{{ button_text }}</a>
-            </div>
-            <div class="swiper-button-prev absolute bottom-0 left-0 transform -translate-y-1/2 bg-white text-gray-600 hover:text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-md cursor-pointer">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-            </div>
-            <div class="swiper-button-next absolute bottom-0 right-0 transform -translate-y-1/2 bg-white text-gray-600 hover:text-gray-900 rounded-full w-10 h-10 flex items-center justify-center shadow-md cursor-pointer">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
+            <div class="card 
+                        flex flex-col items-center
+                        fluid-container 
+                        text-center
+                        gap-8
+                        ">
+                <div class="golden-tag 
+                ">
+                    {{ tag_field }}
+                </div>
+                <h2 class="leading-tight tracking-tight
+                            mb-4
+                ">
+                    {{ heading }}
+                </h2>
+                <p class="text-[1.6rem]
+                            w-1/2
+                            leading-[3rem]
+                            pb-28
+                ">
+                    {{ text_field }}
+                </p>
+                <a href="{{ button_link }}" class="btn
+                ">
+                    {{ button_text }}
+                </a>
+                <div class="swiper-button-prev 
+                            absolute 
+                            bottom-0 left-0 
+                            transform -translate-y-1/2 
+                            bg-white 
+                            text-gray-600 hover:text-gray-900 
+                            rounded-full 
+                            w-10 h-10 
+                            flex items-center justify-center 
+                            shadow-md 
+                            cursor-pointer
+                ">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+                    </svg>
+                </div>
+                <div class="swiper-button-next 
+                            absolute 
+                            bottom-0 right-0 
+                            transform -translate-y-1/2 
+                            bg-white 
+                            text-gray-600 hover:text-gray-900 
+                            rounded-full 
+                            w-10 h-10 
+                            flex items-center justify-center 
+                            shadow-md 
+                            cursor-pointer
+                ">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+                    </svg>
+                </div>
             </div>
         </div>
         {{ /replicator_field }}
     </div>
 
     <!-- Add pagination dots -->
-    <div class="swiper-pagination absolute bottom-2 left-0 right-0 flex justify-center space-x-2">
-        <div class="swiper-pagination-bullet bg-white rounded-full w-2.5 h-2.5"></div>
-        <div class="swiper-pagination-bullet bg-white rounded-full w-2.5 h-2.5"></div>
-        <div class="swiper-pagination-bullet bg-white rounded-full w-2.5 h-2.5"></div>
+    <div class="swiper-pagination 
+                absolute 
+                bottom-2 left-0 right-0 
+                flex justify-center 
+                space-x-2
+    ">
+        <div class="swiper-pagination-bullet 
+                    bg-white 
+                    rounded-full 
+                    w-2.5 
+                    h-2.5
+        "></div>
+        <div class="swiper-pagination-bullet 
+                    bg-white rounded-full 
+                    w-2.5 
+                    h-2.5
+        "></div>
+        <div class="swiper-pagination-bullet 
+                    bg-white 
+                    rounded-full 
+                    w-2.5 h-2.5
+        "></div>
         <!-- Add more dots as needed -->
     </div>
 </div>
 
 
 <script>
-    var swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper-container', {
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -47,3 +117,6 @@
         mousewheel: false,
     });
 </script>
+
+
+<!-- FINISH resources/views/page_builder/slider.antlers.html -->

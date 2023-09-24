@@ -1,5 +1,17 @@
-title: 'Block - Slider'
+title: 'Block - Tab Slider'
 fields:
+  -
+    handle: set_the_background_image
+    field:
+      display: 'Set the background image'
+      type: section
+      icon: section
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    import: image
   -
     handle: replicator_field
     field:

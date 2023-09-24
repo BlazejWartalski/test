@@ -18,7 +18,7 @@ body {
 }
 
 .fluid-container {
-    @apply w-full max-w-[1600px] mx-auto;
+    @apply w-full max-w-[1600px] mx-auto mb-60;
 };
 
 .fluid-container {
@@ -38,15 +38,12 @@ body {
 }
 
 .btn {
-    @apply bg-[#3C76B6]
-    relative
-    flex justify-center items-center
-    text-[1.6rem]
-    font-medium
-    h-[60px]
-    w-[190px]
-    mb-8
-    hover:bg-[#2E5C8E];
+    @apply relative flex justify-center items-center text-[1.6rem] font-medium h-[60px] w-[190px] mb-8 hover:bg-[#2E5C8E];
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    background: #3C76B6;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 90% 100%, 0% 100%);
 }
 
 .btn::after {
@@ -54,12 +51,17 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
-    border-left: 20px solid transparent;
-    border-bottom: 20px solid #132237;
     width: 0;
     height: 0;
-    pointer-events: none; /* Prevents the triangle from being clickable */
-  }
+    pointer-events: none;
+    z-index: -1;
+    border-top: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #3C76B6; /* Match the button background color */
+}
+
+
 
 .golden-tag {
     @apply text-[#E8B222]
@@ -67,10 +69,23 @@ body {
     text-[1.6rem]
     tracking-[0.4rem]
     ;
-    text-shadow:
-    1px 1px 1px #000,
-    -1px 1px 1px #000,
-    -1px -1px 1px #000,
-    1px -1px 1px #000,
-    0px 4px 5px #000;
+}
+
+
+.swiper-button-prev {
+  }
+
+.swiper-button-prev::after {
+    display: none !important;
+}
+  
+.swiper-button-next {
+}
+
+.swiper-button-next::after {
+    display: none !important;
+}
+
+.swiper-container3 .swiper-slide {
+    display:flex !important;
 }
