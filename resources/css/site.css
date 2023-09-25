@@ -18,7 +18,7 @@ body {
 }
 
 .fluid-container {
-    @apply w-full max-w-[1600px] mx-auto mb-60;
+    @apply w-full max-w-[1600px] mx-auto mb-28 lg:mb-60;
 };
 
 .fluid-container {
@@ -66,20 +66,26 @@ body {
 .golden-tag {
     @apply text-[#E8B222]
     uppercase
-    text-[1.6rem]
+    text-[1.4rem] lg:text-[1.6rem]
     tracking-[0.4rem]
     ;
 }
 
 
 .swiper-button-prev {
-  }
+    position: relative !important;
+    width: 3.6rem !important;
+    height: 3.6rem !important;
+}
 
 .swiper-button-prev::after {
     display: none !important;
 }
   
 .swiper-button-next {
+    position: relative !important;
+    width: 3.6rem !important;
+    height: 3.6rem !important;
 }
 
 .swiper-button-next::after {
@@ -88,4 +94,44 @@ body {
 
 .swiper-container3 .swiper-slide {
     display:flex !important;
+}
+
+.swiper-pagination {
+    position: relative !important;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto !important;
+    top: auto !important;
+    bottom: 1rem !important;
+}
+
+.swiper-button-prev svg {
+    width: auto !important;
+    height: auto !important;
+    margin-top: 0px !important;
+}
+.swiper-button-next svg {
+    width: auto !important;
+    height: auto !important;
+    margin-top: 0px !important;
+}
+
+.swiper-pagination-bullet {
+    height: 1.2rem !important;
+    width: 1.2rem !important;
+    background-color: transparent !important;
+    border-width: 2px !important;
+    opacity: 40% !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color:#E8B222 !important;
+    border-width: 0px !important;
+    border-radius: 100% !important;
+    border-style: double;
+    opacity: 100% !important;
+    border: solid ;
+    outline: 2px solid #E8B222;
+    outline-offset: 2px;
 }

@@ -6,28 +6,28 @@ body {
     @apply text-white;
     
     h1 {
-        @apply text-[5rem] md:text-[10rem];
+        @apply text-[5rem] lg:text-[10rem];
     }
     h2 {
-        @apply text-[3rem] md:text-[5rem];
+        @apply text-[3rem] lg:text-[5rem];
     }
     h3 {
-        @apply text-[2.5rem] md:text-[4rem];
+        @apply text-[2.5rem] lg:text-[4rem];
     }
     h4 {
-        @apply text-[2.2rem] md:text-[3rem];
+        @apply text-[2.2rem] lg:text-[3rem];
     }
     h5 {
-        @apply text-[2rem] md:text-[2.4rem];
+        @apply text-[2rem] lg:text-[2.4rem];
     }
 
     p {
-        @apply text-[1.8rem] md:text-[2rem];
+        @apply text-[1.8rem] lg:text-[2rem];
     }
 
     .button {
         p {
-            @apply text-[1.4rem] md:text-[1.6rem] uppercase;
+            @apply text-[1.4rem] lg:text-[1.6rem] uppercase;
         }
     }
 

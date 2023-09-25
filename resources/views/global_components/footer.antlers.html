@@ -1,26 +1,37 @@
 <!-- START resources/views/global_components/footer.antlers.html -->
-<div class="w-full bg-[#0C1623] py-8 leading-[3rem]">
+<footer class="w-full bg-[#0C1623] py-8 leading-[3rem]">
     <div class="max-w-[1600px] 
                 mx-auto;
-                flex flex-col">
-        <div class="flex flex-row gap-20 justify-between align-center">
+                flex flex-col
+                fluid-container
+                relative
+                mb-0
+                mt-12
+                ">
+        <div class="flex 
+                    flex-col lg:flex-row 
+                    gap-20 
+                    justify-between align-center">
             <div>
                 <img src=" {{ logo:footer_logo }}">
             </div>
             <div>
-                <p class="tag text-[1.6rem] ">
+                <p class="tag text-[1.2rem] lg:text-[1.4rem] ">
                     Contact Us
                 </p>
-                
                 <h4 class="border-b-[1px] leading-relaxed mt-3">
-                    {{ contact_information:email }}
+                    <a href="mailto:'{{ contact_information:email }}'">
+                        {{ contact_information:email }}
+                    </a>
                 </h4>
                 <h4 class="border-b-[1px] leading-relaxed mt-6">
-                    {{ contact_information:telephone }}
+                    <a href="tel:'{{ contact_information:telephone }}'">
+                        {{ contact_information:telephone }}
+                    </a>
                 </h4>
             </div>
             <div>
-                <p class="tag text-[1.4rem] ">
+                <p class="tag text-[1.2rem] lg:text-[1.4rem]">
                     Navigation
                 </p>
                 <div style="display: flex;">
@@ -28,7 +39,11 @@
                     <div>
                         {{ nav:footer_navigation }}
                             {{ if index < 5 }}
-                                <div class="text-[1.4rem] disabled mt-3">{{ title }}</div>
+                                <div href="{{ url }}" class="text-[1.4rem] disabled mt-3">
+                                    <a href="{{ url }}">
+                                        {{ title }}
+                                    </a>
+                                </div>
                             {{ /if }}
                         {{ /nav:footer_navigation }}
                     </div>
@@ -37,24 +52,32 @@
                     <div class="ml-12">
                         {{ nav:footer_navigation }}
                             {{ if index >= 5 }}
-                                <div class="text-[1.4rem] disabled mt-3">{{ title }}</div>
+                                <div href="{{ url }}" class="text-[1.4rem] disabled mt-3">
+                                    <a href="{{ url }}">
+                                        {{ title }}
+                                    </a>
+                                </div>
                             {{ /if }}
                         {{ /nav:footer_navigation }}
                     </div>
                 </div>
             </div>
             <div>
-                <p class="tag text-[1.4rem]">
+                <p class="tag text-[1.2rem] lg:text-[1.4rem]">
                     Legal
                 </p>
                 {{ nav:footer_legal_nav }}
-                    <div class="text-[1.4rem] disabled mt-3">{{ title }}</div>
+                    <div href="{{ url }}" class="text-[1.4rem] disabled mt-3">
+                        <a href="{{ url }}">
+                            {{ title }}
+                        </a>
+                    </div>
                 {{ /nav:footer_legal_nav }}
             </div>
-            <div>
+            <div class="absolute lg:relative right-8">
                 {{ social_media }}
                     {{ replicator_field }}
-                        <a>
+                        <a href="{{ url }}">
                             <img src="{{ assets_field }}">
                         </a>
                     {{ /replicator_field }}
@@ -62,14 +85,15 @@
             </div>
         </div>
         <div class="
-        flex flex-row 
+        flex 
+        flex-col lg:flex-row 
         justify-between 
         align-center 
         mt-20
         ">
-            <p class="w-full text-start">{{ footer_text:text_field }}</p>
-            <div class="w-full text-end">{{ footer_text:bard_field }}</div>
+            <p class="w-full text-[1.2rem] text-start">{{ footer_text:text_field }}</p>
+            <div class="w-full text-[1.2rem] text-start lg:text-end">{{ footer_text:bard_field }}</div>
         </div>
     </div>
-</div>
+</footer>
 <!-- END resources/views/global_components/footer.antlers.html -->

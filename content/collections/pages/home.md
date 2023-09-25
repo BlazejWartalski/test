@@ -5,7 +5,7 @@ title: Home
 template: home
 hero_banner_image: herobanner-1.webp
 updated_by: e33c4ae1-e38a-4bd2-9ecd-3bd884fd9f36
-updated_at: 1695567006
+updated_at: 1695679504
 heading: 'Welcome to StarForm'
 bard_field:
   -
@@ -115,6 +115,7 @@ page_builder:
     type: cards_slider
     enabled: true
     heading: Media
+    add_flourish: true
   -
     id: lmvxwasf
     assets_field: group-868.jpg

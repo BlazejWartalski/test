@@ -1,16 +1,36 @@
 <!-- START page_builder/cards_slider.antlers.html -->
-<div class="slider-container3 relative min-h-[900px] fluid-container overflow-hidden">
+<div class="slider-container3 relative lg:h-[900px] fluid-container overflow-hidden">
     <h2 class="tracking-tight">
         {{ heading }}
     </h2>
+    {{ if add_flourish }}
+        <div class="absolute
+        flex justify-center
+        items-center
+        top-[40%]
+        left-0
+        overflow-visible
+        ">
+            <svg class="absolute" width="260" height="260" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" opacity="0.8" clip-rule="evenodd" stroke="#E8B222" stroke-width="10" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
+            </svg>
+            
+            <svg class="absolute" width="370" height="370" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" opacity="0.6" clip-rule="evenodd" stroke="#E8B222" stroke-width="4" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
+            </svg>
+                
+            <svg class="absolute" width="470" height="470" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" opacity="0.4" clip-rule="evenodd" stroke="#E8B222" stroke-width="2" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
+            </svg>
+        </div>
+    {{ /if }}
     <div class="swiper-container3 slider3 whitespace-nowrap">
         <div class="swiper-wrapper">
             {{ collection from="blog" }}
                 <div class="swiper-slide 
                             slider-card 
-                            max-w-[445px] 
-                            max-h-[585px]
-                            min-h-[585px]
+                            max-w-[325px] lg:max-w-[445px] 
+                            h-[430px] lg:min-h-[585px]
                             bg-zinc-400 
                             w-64
                             flex-col
@@ -46,7 +66,7 @@
                             <p class="text-[1.4rem] tracking-[0.3em]">
                                 READ MORE
                             </p>
-                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="12" height="10" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 12 10" class="text-white">
                                 <path d="M11 5L1 5M11 5L6.625 9M11 5L6.625 1" stroke="#E8B222" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
@@ -55,14 +75,29 @@
             {{ /collection }}
         </div>
     </div>
-    <div class="slider-buttons">
-        <button class="slider-button prev px-4 py-2 rounded-full bg-blue-500 text-white mr-4 rotate-180" id="prev">
-            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+    <div class="slider-buttons flex flex-row mt-8">
+        <button class="slider-button prev 
+                        bg-transparent
+                        border-white border-[1px] 
+                        text-white 
+                        mr-4
+                        w-24 h-24 
+                        rotate-180 
+                        flex items-center justify-center" 
+                id="prev"
+        >
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 24 24" class="text-white">
                 <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
             </svg>
         </button>
-        <button class="slider-button next px-4 py-2 rounded-full bg-blue-500 text-white" id="next">
-            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+        <button class="slider-button next 
+                        px-4 py-2 
+                        bg-[#3C76B6]
+                        text-white
+                        w-24 h-24
+                        flex items-center justify-center" 
+                id="next">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" viewBox="0 0 24 24" class="text-white">
                 <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
             </svg>
         </button>
@@ -72,20 +107,20 @@
 <script>
     function updateSlidesPerView() {
         const containerWidth = document.querySelector('.swiper-container3').offsetWidth;
-        let slidesPerView = 3; // Default value for large screens
+        let slidesPerView = 3;
         
         if (containerWidth < 768) {
-            slidesPerView = 1; // Show one card on smaller screens
+            slidesPerView = 1;
         } else if (containerWidth < 1024) {
-            slidesPerView = 2; // Show two cards on medium screens
+            slidesPerView = 2;
         }
         
         return slidesPerView;
     }
 
     const mySwiper3 = new Swiper('.swiper-container3', {
-        slidesPerView: updateSlidesPerView(), // Initial slidesPerView
-        spaceBetween: 20,  // Space between slides
+        slidesPerView: updateSlidesPerView(),
+        spaceBetween: 20,
         navigation: {
             prevEl: '#prev',
             nextEl: '#next',
@@ -98,7 +133,39 @@
         mySwiper3.params.slidesPerView = updateSlidesPerView();
         mySwiper3.update();
     });
+
+    // Add event listeners to update button styles
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    mySwiper3.on('init', () => {
+        // Initialize button styles
+        updateButtonStyles();
+    });
+
+    mySwiper3.on('slideChange', () => {
+        // Update button styles when the slide changes
+        updateButtonStyles();
+    });
+
+    function updateButtonStyles() {
+        // Check if the button is clickable and active
+        const isPrevClickable = mySwiper3.isBeginning ? false : true;
+        const isNextClickable = mySwiper3.isEnd ? false : true;
+
+        // Update button styles based on clickability
+        updateButtonStyle(prevButton, isPrevClickable);
+        updateButtonStyle(nextButton, isNextClickable);
+    }
+
+    function updateButtonStyle(button, isClickable) {
+        if (isClickable) {
+            button.classList.add('bg-[#3C76B6]');
+            button.classList.remove('bg-transparent', 'border-[1px]' , 'border-white', 'text-white');
+        } else {
+            button.classList.remove('bg-[#3C76B6]');
+            button.classList.add('bg-transparent', 'border-[1px]', 'border-white', 'text-white');
+        }
+    }
 </script>
-
-
 <!-- FINISH page_builder/cards_slider.antlers.html -->

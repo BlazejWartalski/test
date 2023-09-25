@@ -36,7 +36,7 @@ fields:
       always_save: false
       instructions: 'The most recent articles are automatically pulled and populate this slider.'
   -
-    handle: enable_the_flourish_effect
+    handle: add_flourish
     field:
       default: false
       display: 'Enable the flourish effect'

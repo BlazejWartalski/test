@@ -1,12 +1,12 @@
 <!-- START resources/views/page_builder/slider.antlers.html -->
 
 <div class="swiper-container 
-            relative 
-            overflow-hidden 
-            py-80"
+        relative 
+        overflow-hidden 
+        py-36 lg:py-80"
     style="
         background-image:url('{{ glide:assets_field }}');
-        background-size: 100% 100%
+        background-size: 100% 100%;
 ">
     <div class="swiper-wrapper">
         {{ replicator_field }}
@@ -16,9 +16,8 @@
                         fluid-container 
                         text-center
                         gap-8
-                        ">
-                <div class="golden-tag 
-                ">
+            ">
+                <div class="golden-tag">
                     {{ tag_field }}
                 </div>
                 <h2 class="leading-tight tracking-tight
@@ -27,80 +26,59 @@
                     {{ heading }}
                 </h2>
                 <p class="text-[1.6rem]
-                            w-1/2
+                            lg:w-1/2
                             leading-[3rem]
-                            pb-28
+                            pb-8 lg:pb-28
                 ">
                     {{ text_field }}
                 </p>
-                <a href="{{ button_link }}" class="btn
-                ">
+                <a href="{{ button_link }}" class="btn">
                     {{ button_text }}
                 </a>
-                <div class="swiper-button-prev 
-                            absolute 
-                            bottom-0 left-0 
-                            transform -translate-y-1/2 
-                            bg-white 
-                            text-gray-600 hover:text-gray-900 
-                            rounded-full 
-                            w-10 h-10 
-                            flex items-center justify-center 
-                            shadow-md 
-                            cursor-pointer
-                ">
-                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
-                    </svg>
-                </div>
-                <div class="swiper-button-next 
-                            absolute 
-                            bottom-0 right-0 
-                            transform -translate-y-1/2 
-                            bg-white 
-                            text-gray-600 hover:text-gray-900 
-                            rounded-full 
-                            w-10 h-10 
-                            flex items-center justify-center 
-                            shadow-md 
-                            cursor-pointer
-                ">
-                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
-                    </svg>
-                </div>
             </div>
         </div>
         {{ /replicator_field }}
     </div>
 
-    <!-- Add pagination dots -->
-    <div class="swiper-pagination 
-                absolute 
-                bottom-2 left-0 right-0 
-                flex justify-center 
-                space-x-2
-    ">
-        <div class="swiper-pagination-bullet 
-                    bg-white 
+    <!-- Add arrows and dots container -->
+    <div class="flex gap-8
+                justify-center relative items-center">
+        <!-- Left Arrow -->
+        <div class="swiper-button-prev 
+                    relative 
+                    text-gray-600 hover:text-gray-900
+                    border-2
                     rounded-full 
-                    w-2.5 
-                    h-2.5
+                    w-10 h-10 
+                    cursor-pointer
+                    rotate-180
+        ">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="white" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+            </svg>
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination relative
+                    flex justify-center
         "></div>
-        <div class="swiper-pagination-bullet 
-                    bg-white rounded-full 
-                    w-2.5 
-                    h-2.5
-        "></div>
-        <div class="swiper-pagination-bullet 
-                    bg-white 
+
+        <!-- Right Arrow -->
+        <div class="swiper-button-next 
+                    relative
+                    text-gray-600 hover:text-gray-900 
                     rounded-full 
-                    w-2.5 h-2.5
-        "></div>
-        <!-- Add more dots as needed -->
+                    w-10 h-10 
+                    border-2
+                    cursor-pointer
+        ">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="white" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+            </svg>
+        </div>
     </div>
 </div>
-
+<!-- FINISH resources/views/page_builder/slider.antlers.html -->
 
 <script>
     const swiper = new Swiper('.swiper-container', {
@@ -118,5 +96,3 @@
     });
 </script>
 
-
-<!-- FINISH resources/views/page_builder/slider.antlers.html -->
