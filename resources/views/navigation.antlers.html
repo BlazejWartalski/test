@@ -3,7 +3,7 @@
 <div class="absolute w-full hidden lg:block">
     <div class="flex justify-between fluid-container pt-20">
         <div>
-            <img src="{{ logo:assets_field }}">
+            <img src="{{ logo:assets_field }}" alt="logo">
         </div>
         <nav>
             <ul class="nav flex-row gap-12 hidden lg:flex"">
@@ -48,47 +48,52 @@
     </div>
 </div>
 <div class="absolute w-full lg:hidden">
-    <div class="flex justify-between p-12">
+    <div id="mobileNavTop" class="flex justify-between p-12">
         <div>
-            <img src="{{ logo:assets_field }}">
+            <img src="{{ logo:assets_field }}" alt="logo">
         </div>
-        <div class="w-full flex justify-end">
-            <img class="" src="{{ navigation_mobile_icons:mobileclosed }}">
-        </div>
-        <div class="flex justify-end">
-            <img class="hidden" src="{{ navigation_mobile_icons:mobileopen }}">
+        <div class="w-full flex justify-end relative">
+            <img class="absolute" id="mobileClosed" src="{{ navigation_mobile_icons:mobileclosed }}" alt="mobile navigation icon closed">
+            <img class="hidden absolute" id="mobileOpen" src="{{ navigation_mobile_icons:mobileopen }}" alt="mobile navigation icon open">
         </div>
     </div>
-    <nav class="hidden">
-        <ul>
+    <nav id="mobileNavigation" class="absolute 
+                                    hidden 
+                                    h-screen 
+                                    w-full 
+                                    p-8
+                                    pt-20
+                                    z-20 
+                                    bg-[#0C1623]">
+        <ul class="flex flex-col gap-10 pb-32">
             {{ nav:main_navigation }}
                 {{ if children }} 
                     <li class="nav-item ">
                         <a class="nav-link flex flex-row group hover:text-[#E8B222] hover:underline" href="{{ url }}" style="cursor: pointer;">
-                            <p>
+                            <p class="title text-[2rem]">
                                 {{ title }}
                             </p>
-                            <div class="flex items-center pl-2 origin-[75%_50%] transform transition-transform duration-300 svg-icon">
-                                <svg width="10" height="5" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="stroke-current text-white group-hover:text-[#E8B222]">
-                                    <path d="M1 0.5L5 4.5L9 0.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            <div class="flex items-center ml-8 origin-[75%_50%] transform transition-transform duration-300 svg-icon">
+                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="#E8B222" viewBox="0 0 24 24" class="text-white">
+                                    <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
                                 </svg>
                             </div>
                         </a>
                         
                         <ul class="nav-child hidden">
                             {{ children }}
-                                <li>
+                                <li class="pt-10">
                                     <a class="hover:text-[#E8B222] hover:underline" href="{{ url }}">
-                                        <p>{{ title }} </p>
+                                        <p class="text-[2rem]">{{ title }} </p>
                                     </a>
                                 </li>
                             {{ /children }}
                         </ul>
                     </li>
                 {{ else }}
-                    <li>
+                    <li class="main">
                         <a href="{{ url }}" class="hover:text-[#E8B222] hover:underline">
-                            <p>
+                            <p class="text-[2rem]">
                                 {{ title }}
                             </p>
                         </a>
@@ -96,51 +101,91 @@
                 {{ /if }}
             {{ /nav:main_navigation }}
         </ul>
+        {{ social_media }}
+            {{ replicator_field }}
+                <a href="{{ url }}">
+                    <img src="{{ assets_field }}" alt="card background">
+                </a>
+            {{ /replicator_field }}
+        {{ /social_media }}
     </nav>
-    <div class="hidden">
-        Twitter
-    </div>
 </div>
 
-
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const parentItems = document.querySelectorAll(".nav-item");
-      
-        const hideAllChildren = () => {
-            document.querySelectorAll('.nav-child').forEach((el) => {
-                el.classList.add('hidden');
-                el.closest('.nav-item').querySelector('.nav-link').classList.remove('parent-hover');
-                el.closest('.nav-item').querySelector('.svg-icon').classList.remove('parent-hover');
-            });
+    document.addEventListener("DOMContentLoaded", function () {
+        const closeBtn = document.getElementById('mobileOpen');
+        const openBtn = document.getElementById('mobileClosed');
+        const mobileNavTop = document.getElementById('mobileNavTop');
+        const mobileNavigation = document.getElementById('mobileNavigation');
+    
+        openBtn.addEventListener("click", revealNavigation);
+        closeBtn.addEventListener("click", hideNavigation);
+    
+        function revealNavigation() {
+            openBtn.classList.add('hidden');
+            closeBtn.classList.remove('hidden');
+            mobileNavigation.classList.remove('hidden');
+            mobileNavTop.classList.add('bg-[#0C1623]');
         }
-      
-        const showChildrenOfParent = (parent) => {
-            const childMenu = parent.querySelector('.nav-child');
-            const parentLink = parent.querySelector('.nav-link');
-            const svgIcon = parent.querySelector('.svg-icon');
-            if (childMenu) {
-                childMenu.classList.toggle('hidden');
-                parentLink.classList.add('parent-hover');
-                svgIcon.classList.add('parent-hover');
-            }
+    
+        function hideNavigation() {
+            mobileNavigation.classList.add('hidden');
+            closeBtn.classList.add('hidden');
+            openBtn.classList.remove('hidden');
+            mobileNavTop.classList.remove('bg-[#0C1623]');
         }
-      
-        parentItems.forEach((parentItem) => {
-            parentItem.addEventListener("click", function(event) {
-                hideAllChildren();
-                showChildrenOfParent(this);
-            });
-      
-            parentItem.addEventListener("mouseover", function(event) {
-                hideAllChildren();
-                showChildrenOfParent(this);
-            });
-      
-            parentItem.addEventListener("mouseout", function(event) {
-                hideAllChildren();
-            });
+    
+        const parentItems = document.querySelectorAll('.nav-item');
+    
+        parentItems.forEach(item => {
+            item.addEventListener('click', handleNavItemClick);
+            item.isChildVisible = false;
         });
+    
+        function handleNavItemClick(e) {
+            e.preventDefault();
+    
+            const item = e.currentTarget;
+            const childItems = item.querySelectorAll('.nav-child');
+            const svgIcon = item.querySelector('.svg-icon');
+            const title = item.querySelector('.title');
+
+            const allNavItems = document.querySelectorAll('.main');
+
+            if (item.isChildVisible) {
+                childItems.forEach(child => {
+                    child.classList.add('hidden');
+                });
+                allNavItems.forEach(navItem => {
+                    if (navItem !== item) {
+                        navItem.classList.remove('hidden');
+                    }
+                });
+                svgIcon.classList.remove('mr-8');
+                svgIcon.style.transform = 'rotate(0deg)';
+                item.isChildVisible = false;
+            } else {
+                childItems.forEach(child => {
+                    child.classList.remove('hidden');
+                });
+                allNavItems.forEach(navItem => {
+                    if (navItem !== item) {
+                        navItem.classList.add('hidden');
+                    }
+                });
+                svgIcon.classList.add('mr-8');
+                svgIcon.style.transform = 'rotate(180deg)';
+                item.isChildVisible = true;
+            }
+    
+            svgIcon.classList.toggle('order-1');
+            svgIcon.classList.toggle('ml-8');
+            title.classList.toggle('order-2');
+            item.classList.toggle('pb-8');
+            item.classList.toggle('px-2');
+        }
     });
-</script>
+    
+    </script>
+
 <!-- END resources/views/navigation.antlers.html -->

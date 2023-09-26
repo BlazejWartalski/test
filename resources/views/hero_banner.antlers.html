@@ -2,9 +2,10 @@
 
 <div class="relative
     w-full
-    h-[1030px]
+    h-[585px] lg:h-[1030px]
     bg-no-repeat
     bg-center
+    mb-80 lg:mb-0
 " 
 style="background-image:url('{{ glide:hero_banner_image }}'); background-size: 100% 100%">
   {{ partial:navigation }}
@@ -17,7 +18,9 @@ style="background-image:url('{{ glide:hero_banner_image }}'); background-size: 1
     w-full
     text-center
     ">
-      <h1>
+      <h1 class="leading-tight lg:leading-relaxed
+                  mb-8 lg:mb-0
+      ">
         {{ heading }}
       </h1>
       <div class="
@@ -29,12 +32,12 @@ style="background-image:url('{{ glide:hero_banner_image }}'); background-size: 1
     </div>
     <div class="
     absolute 
-    lg:bottom-[12%] 
+    bottom-[-15%] lg:bottom-[12%] 
     w-full 
     flex justify-center">
 
       <a class="" onClick="document.getElementById('firstItem').scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });">
-        <img src="{{ hero_icon:assets_field }}">
+        <img src="{{ hero_icon:assets_field }}" alt="Scroll Down Icon">
       </a>
     </div>
 </div>

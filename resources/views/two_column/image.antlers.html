@@ -1,27 +1,27 @@
 <!-- START resources/views/two_column/text.antlers.html -->
 <div>
     <img class="relative z-20" style="clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
-" src="{{ glide:assets_field }}">
+" src="{{ glide:assets_field }}" alt="image">
     {{ if add_flourish }}
-        <div class="absolute
-        flex justify-center
-        items-center
-        z-10
-        top-0
-        right-12
-        ">
-            <svg class="absolute" width="260" height="260" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" opacity="0.8" clip-rule="evenodd" stroke="#E8B222" stroke-width="10" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
-            </svg>
+    <div class="absolute
+    flex justify-center
+    items-center
+    z-10
+    top-0
+    right-0 lg:right-12 
+    ">
+        <svg class="absolute w-[140px] lg:w-[260px]" width="260" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" opacity="0.8" clip-rule="evenodd" stroke="#E8B222" stroke-width="10" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
+        </svg>
+        
+        <svg class="absolute w-[220px] lg:w-[370px]" width="370" height="370" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" opacity="0.6" clip-rule="evenodd" stroke="#E8B222" stroke-width="4" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
+        </svg>
             
-            <svg class="absolute" width="370" height="370" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" opacity="0.6" clip-rule="evenodd" stroke="#E8B222" stroke-width="4" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
-            </svg>
-                
-            <svg class="absolute" width="470" height="470" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" opacity="0.4" clip-rule="evenodd" stroke="#E8B222" stroke-width="2" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
-            </svg>
-        </div>
+        <svg class="absolute w-[280px] lg:w-[470px]" width="470" height="470" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" opacity="0.4" clip-rule="evenodd" stroke="#E8B222" stroke-width="2" d="M256 438.857C356.989 438.857 438.857 356.989 438.857 256C438.857 155.011 356.989 73.1429 256 73.1429C155.011 73.1429 73.1429 155.011 73.1429 256C73.1429 356.989 155.011 438.857 256 438.857Z"/>
+        </svg>
+    </div>
     {{ /if }}
 </div>
 
